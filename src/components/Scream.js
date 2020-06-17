@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 
-
+// Styling
 const styles = {
     card: {
         display: 'flex',
@@ -25,6 +25,7 @@ const styles = {
     }
 }
 
+// Displays the posts by the users
 class Scream extends Component {
     render() {
         dayjs.extend(relativeTime)
