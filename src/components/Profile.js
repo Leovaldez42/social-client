@@ -2,19 +2,21 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 import {Link} from 'react-router-dom';
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
+import EditDetails from './EditDetails';
 // MUI stuff
-import Button from '@material-ui/core/Button'
-import MuiLink from '@material-ui/core/Link'
+import Button from '@material-ui/core/Button';
+import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import IconButton from '@material-ui/core/IconButton'
-import EditIcon from '@material-ui/icons/Edit'
-import Tooltip from '@material-ui/core/Tooltip'
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
+import Tooltip from '@material-ui/core/Tooltip';
 // Icons
-import LocationOn from '@material-ui/icons/LocationOn'
-import LinkIcon from '@material-ui/icons/Link'
-import CalendarToday from '@material-ui/icons/CalendarToday'
+import LocationOn from '@material-ui/icons/LocationOn';
+import LinkIcon from '@material-ui/icons/Link';
+import CalendarToday from '@material-ui/icons/CalendarToday';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 // Redux stuff
 import { connect } from 'react-redux'
 import {logoutUser, uploadImage} from '../redux/actions/userAction'
@@ -82,6 +84,9 @@ export class Profile extends Component {
     fileInput.click();
   }
 
+  handleLogout = () => {
+    this.props.logoutUser();
+  }
 
   render() {
       const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location }, loading, authenticated}} = this.props
@@ -110,16 +115,20 @@ export class Profile extends Component {
                   )}
                   {website && (
                       <Fragment>
-                          <LinkIcon color="primary"/>
-                          <a href={website} target="_blank" rel="noopener noreferrer">
-                              {' '}{website}
-                          </a>
-                          <hr />
+                        <LinkIcon color="primary"/>
+                        <a href={website} target="_blank" rel="noopener noreferrer">{' '}{website} </a>
+                        <hr />
                       </Fragment>
                   )}
                   <CalendarToday color="primary"/>{' '}
                   <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
               </div>
+              <Tooltip title="Logout" placement="top">
+                <IconButton onClick={this.handleLogout}>
+                    <KeyboardReturnIcon color="primary"/>
+                </IconButton>
+              </Tooltip>
+              <EditDetails />
           </div>
       </Paper>) : (
         // This for when the user is not signed it (not authenticated)
@@ -127,12 +136,8 @@ export class Profile extends Component {
               <Typography variant="body2" align="center">
                   No profile found, please login again
                   <div className={classes.buttons}>
-                      <Button variant="contained" color="primary" component={Link} to="/login">
-                          Login
-                      </Button>
-                      <Button variant="contained" color="secondary" component={Link} to="/signup">
-                          Signup
-                      </Button>
+                      <Button variant="contained" color="primary" component={Link} to="/login"> Login </Button>
+                      <Button variant="contained" color="secondary" component={Link} to="/signup"> Signup </Button>
                   </div>
               </Typography>
           </Paper>
