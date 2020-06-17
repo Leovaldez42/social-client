@@ -15,7 +15,7 @@ import CalendarToday from '@material-ui/icons/CalendarToday'
 // Redux stuff
 import { connect } from 'react-redux'
 
-
+// Styling
 const styles = {
     paper: {
         padding: 20
@@ -67,7 +67,7 @@ const styles = {
 export class Profile extends Component {
     render() {
         const { classes, user: { credentials: { handle, createdAt, imageUrl, bio, website, location }, loading, authenticated}} = this.props
-
+        // Basically this checks if user is authenticated, it it is it shows details which are given by the user, otherwise not shown. If the user is not authenticated it shows buttons to home page and login page
         let profileMarkup = !loading ? (authenticated ? (
         <Paper className={classes.paper}>
             <div className={classes.profile}>
@@ -102,6 +102,7 @@ export class Profile extends Component {
                 </div>
             </div>
         </Paper>) : (
+          // This for when the user is not signed it (not authenticated)
             <Paper className={classes.paper}>
                 <Typography variant="body2" align="center">
                     No profile found, please login again

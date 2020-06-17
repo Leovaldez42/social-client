@@ -3,23 +3,24 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import PropTypes from 'prop-types'
 import Logo from '../images/vjti.jpeg'
 import { Link } from 'react-router-dom'
-
 // MUI STUFF
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography' 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
-
 // Redux stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/userAction'
 
+// Styling taken from util/theme
 const styles = theme => ({
     ...theme.spreadThis
   });    
 
+// This is the login component.
 class login extends Component {
+    // It shall give the initial state as all empty and then it shall check the detials given by the user ( which is handled by the server side ) and give the necessary errors.
     constructor() {
         super();
         this.state = {
