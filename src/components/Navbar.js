@@ -23,15 +23,15 @@ export class Navbar extends Component {
                         // This is if user is authenticated.
                         <Fragment>
                             <MyButton tip="Create a post">
-                                <AddIcon color="primary"/>  {/* Primary will be white due to svg */}
+                                <AddIcon />  {/* Color will be white due to primary-svg in theme */}
                             </MyButton>
                             <Link to="/">
                                 <MyButton tip="Home">
-                                    <HomeIcon color="primary" />
+                                    <HomeIcon  />
                                 </MyButton>
                             </Link>
                             <MyButton tip="Notification">
-                                <Notifications color="primary" />
+                                <Notifications  />
                             </MyButton>
                         </Fragment>
                     )

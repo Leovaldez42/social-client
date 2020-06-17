@@ -9,9 +9,7 @@ import Button from '@material-ui/core/Button';
 import MuiLink from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import Tooltip from '@material-ui/core/Tooltip';
 // Icons
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
@@ -20,6 +18,7 @@ import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 // Redux stuff
 import { connect } from 'react-redux'
 import {logoutUser, uploadImage} from '../redux/actions/userAction'
+import MyButton from '../util/MyButton';
 
 // Styling
 const styles = {
@@ -97,7 +96,9 @@ export class Profile extends Component {
               <div className="image-wrapper">
                   <img src={imageUrl} alt="profile" className="profile-image" />
                   <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange} />
-                  <Tooltip title="Edit profile picture" placement="bottom-start"><IconButton onClick={this.handleEditPicture} className="button"><EditIcon color="primary"></EditIcon></IconButton></Tooltip>
+                  <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button">
+                    <EditIcon color="primary"/>
+                  </MyButton>
               </div>
               <hr />
               <div className="profile-details">
@@ -123,11 +124,9 @@ export class Profile extends Component {
                   <CalendarToday color="primary"/>{' '}
                   <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
               </div>
-              <Tooltip title="Logout" placement="top">
-                <IconButton onClick={this.handleLogout}>
+              <MyButton tip="Logout" onClick={this.handleLogout}>
                     <KeyboardReturnIcon color="primary"/>
-                </IconButton>
-              </Tooltip>
+                  </MyButton>
               <EditDetails />
           </div>
       </Paper>) : (
