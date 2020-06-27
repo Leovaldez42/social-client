@@ -19,7 +19,7 @@ export const getScreams = () => (dispatch) => {
       });
   };
 
-  // Post a scream
+// Post a scream
 export const postScream = (newScream) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
