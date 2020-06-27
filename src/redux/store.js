@@ -14,7 +14,7 @@ const reducers = combineReducers({
     data: dataReducer,
     UI: uiReducer
 });
-
+// this had to be changed
 const store = createStore(reducers, initialState, compose(applyMiddleware(...middleWare), window.__REDUX_DEVTOOLS_EXTENSION__
 ? window.__REDUX_DEVTOOLS_EXTENSION__()
 : f => f));
