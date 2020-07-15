@@ -16,5 +16,6 @@ export const UNLIKE_SCREAM = 'UNLIKE_SCREAMS';
 export const DELETE_SCREAM = 'DELETE_SCREAM';
 export const POST_SCREAM = 'POST_SCREAM';
 export const STOP_LOADING_UI = 'STOP_LOADING_UI'
+export const SUBMIT_COMMENT = 'SUBMIT_COMMENT';
 
 
