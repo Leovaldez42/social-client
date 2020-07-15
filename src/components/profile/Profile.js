@@ -17,8 +17,8 @@ import CalendarToday from '@material-ui/icons/CalendarToday';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 // Redux stuff
 import { connect } from 'react-redux'
-import {logoutUser, uploadImage} from '../redux/actions/userAction'
-import MyButton from '../util/MyButton';
+import { logoutUser, uploadImage } from '../../redux/actions/userAction';
+import MyButton from '../../util/MyButton';
 
 // Styling
 const styles = {
