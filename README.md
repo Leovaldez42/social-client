@@ -2,6 +2,8 @@
 
 A blog that allows you to signup/login, post, like/unlike and comment on the post.
 
+Video link https://youtu.be/S5h3Ku-nLmU
+
 
 1. Clone the repo.
 ```bash
