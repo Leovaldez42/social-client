@@ -1,7 +1,14 @@
-# Blogging
+# Blog
+1. Clone the repo.
+```bash
+    git clone https://github.com/Leovaldez42/social-client.git
+```
 
-### To start the application
-``` git clone https://github.com/Leovaldez42/social-client ```
-``` cd social-client ```
-``` npm i ```
-``` npm start ```
+2. Navigate to the client folder. 
+```bash
+    cd social-client
+```
+
+3. This one is dependent on what you wish to start henceforth.
+    
+    a. To start the server, type `npm start`
