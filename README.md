@@ -1,4 +1,6 @@
 # Blog
+
+### A blog that allows you tosignup/login, post, like/unlike and comment on the post.
 1. Clone the repo.
 ```bash
     git clone https://github.com/Leovaldez42/social-client.git
